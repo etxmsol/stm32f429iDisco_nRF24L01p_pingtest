@@ -278,9 +278,6 @@ extern SPI_HandleTypeDef SpiHandle;
 //Define the layer1 functions
 unsigned char nRF24L01_SPI_Send_Byte(unsigned char dat)
 {
-	  /*##-2- Start the Full Duplex Communication process ########################*/
-	  /* While the SPI in TransmitReceive process, user can transmit data through
-	     "aTxBuffer" buffer & receive data through "aRxBuffer" */
 	  /* Timeout is set to 5s */
 
 	unsigned char result;
