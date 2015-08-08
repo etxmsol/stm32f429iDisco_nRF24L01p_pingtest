@@ -101,7 +101,7 @@ unsigned char RxBuf[Buffer_Size] = {0};
 
 //define the initial Address
 unsigned char  TX_ADDRESS[ADR_WIDTH]= {0xD0,0xD0,0xD0,0xD0,0xD0};
-unsigned char  RX_ADDRESS[ADR_WIDTH]= {0xe1,0xF0,0xF0,0xF0,0xF0};
+unsigned char  RX_ADDRESS[ADR_WIDTH]= {0xE1,0xF0,0xF0,0xF0,0xF0};
 // unsigned char  TX_ADDRESS[ADR_WIDTH]= {0xB3,0xB4,0xB5,0xB6,0xF1};
 // unsigned char  RX_ADDRESS[ADR_WIDTH]= {0xB3,0xB4,0xB5,0xB6,0xF1};
 // unsigned char  TX_ADDRESS[ADR_WIDTH]= {0x01,0x23,0x45,0x67,0x89};
@@ -149,7 +149,7 @@ void RX_Mode(void)
 	SPI_WR_Reg(WRITE_nRF_REG + SETUP_AW, 0x03); // setup add width 5 bytes
 	SPI_WR_Reg(WRITE_nRF_REG + RF_CH,10);// setup frequency
 	SPI_WR_Reg(WRITE_nRF_REG + RF_SETUP,  0x07);// setup power and rate
-	SPI_WR_Reg(WRITE_nRF_REG + RX_PW_P0,32); //Number of bytes in data P1
+	SPI_WR_Reg(WRITE_nRF_REG + RX_PW_P0,32); //Number of bytes in data P0
 	SPI_WR_Reg(WRITE_nRF_REG + RX_PW_P1,32); //Number of bytes in data P1
 	SPI_WR_Reg(WRITE_nRF_REG + EN_RXADDR, 0x03); //Enable data P1
 	SPI_Write_Buf(WRITE_nRF_REG + TX_ADDR, TX_ADDRESS, ADR_WIDTH); // write address into tx_add
